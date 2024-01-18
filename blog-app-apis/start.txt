@@ -1,0 +1,1 @@
+https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.2.1&packaging=jar&jvmVersion=17&groupId=com.shreyash.blog&artifactId=blog-app-apis&name=blog-app-apis&description=This%20is%20a%20backend%20apis%20for%20blogging&packageName=com.shreyash.blog&dependencies=web,data-jpa,mysql,lombok,devtools
