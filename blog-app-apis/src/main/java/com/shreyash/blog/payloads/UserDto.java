@@ -1,6 +1,8 @@
 package com.shreyash.blog.payloads;
 
-import jakarta.persistence.Column;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,8 +10,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDto {
     private long id;
+
+    @NotBlank(message = "Name is mandatory")
+    @Size(max = 60,min = 2,  message = "Name must not exceed 60 characters")
     private String name;
+
+    @Email(message = "Invalid email address")
     private String email;
+
+    @NotBlank(message = "Password is mandatory")
     private String password;
+
+    @Size(max = 255,min = 4,  message = "About must not exceed 255 characters")
     private String about;
 }
