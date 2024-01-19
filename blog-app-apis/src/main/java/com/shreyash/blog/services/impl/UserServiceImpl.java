@@ -5,6 +5,7 @@ import com.shreyash.blog.exceptions.ResourceNotFoundException;
 import com.shreyash.blog.payloads.UserDto;
 import com.shreyash.blog.repositories.UserRepository;
 import com.shreyash.blog.services.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ModelMapper modelMapper;
+
 
     @Override
     public UserDto createUser(UserDto userDto) {
@@ -56,9 +60,8 @@ public class UserServiceImpl implements UserService {
     }
 
     private User dtoToEntity(UserDto userDto){
-        User user = new User();
-        BeanUtils.copyProperties(userDto,user);
-        return user;
+        //        BeanUtils.copyProperties(userDto,user);
+        return this.modelMapper.map(userDto,User.class);
     }
 
     private UserDto entityToDto(User user){

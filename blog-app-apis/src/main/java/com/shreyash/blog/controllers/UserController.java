@@ -3,6 +3,7 @@ package com.shreyash.blog.controllers;
 import com.shreyash.blog.payloads.ApiResponse;
 import com.shreyash.blog.payloads.UserDto;
 import com.shreyash.blog.services.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private ModelMapper modelMapper;
 
 
     // Post -> Create user
