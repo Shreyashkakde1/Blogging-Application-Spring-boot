@@ -3,6 +3,7 @@ package com.shreyash.blog.controllers;
 import com.shreyash.blog.payloads.ApiResponse;
 import com.shreyash.blog.payloads.CategoryDto;
 import com.shreyash.blog.services.CategoryService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +31,7 @@ public class CategoryController {
      * @return ResponseEntity with the created category data and HTTP status 201 (Created).
      */
     @PostMapping("/")
-    public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto categoryDto) {
+    public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
         CategoryDto category = categoryService.createCategory(categoryDto);
         return new ResponseEntity<>(category, HttpStatus.CREATED);
     }
