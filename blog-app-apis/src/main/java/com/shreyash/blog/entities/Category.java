@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "category")
 @Data
@@ -26,4 +29,7 @@ public class Category {
     @Size(max = 1000, message = "Description must not exceed 1000 characters")
     @Column(name = "description")
     private String categoryDescription;
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<Post> post = new ArrayList<>();
 }
