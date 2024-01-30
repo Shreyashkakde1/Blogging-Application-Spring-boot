@@ -11,8 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api")
 public class PostController {
@@ -54,9 +52,11 @@ public class PostController {
     @GetMapping("/getAllPost")
     public ResponseEntity<PostResponse> getAllPost(
             @RequestParam(value = "pageNumber",defaultValue = "0",required = false) Integer pageNumber,
-            @RequestParam(value = "pageSize",defaultValue = "10", required = false) Integer pageSize
+            @RequestParam(value = "pageSize",defaultValue = "10", required = false) Integer pageSize,
+            @RequestParam(value = "sortBy",defaultValue = "postId",required = false) String sortBy,
+            @RequestParam(value = "sortDir",defaultValue = "asc",required = false) String sortDir
     ){
-        PostResponse allPosts = this.postService.getAllPosts(pageNumber, pageSize);
+        PostResponse allPosts = this.postService.getAllPosts(pageNumber, pageSize,sortBy,sortDir);
         return new ResponseEntity<>(allPosts,HttpStatus.OK);
 
     }

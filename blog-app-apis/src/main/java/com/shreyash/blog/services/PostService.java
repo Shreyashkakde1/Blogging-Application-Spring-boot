@@ -1,10 +1,8 @@
 package com.shreyash.blog.services;
 
-import com.shreyash.blog.entities.Category;
 import com.shreyash.blog.entities.Post;
 import com.shreyash.blog.payloads.PostDto;
 import com.shreyash.blog.payloads.PostResponse;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +19,7 @@ public interface PostService {
     public void deletePost(Long postId);
 
     // Get All Post
-    public PostResponse getAllPosts(Integer pageNumber, Integer pageSize);
+    public PostResponse getAllPosts(Integer pageNumber, Integer pageSize,String sortBy,String sortDir);
 
     // Get Post by ID
     public PostDto getPostById(Long postId);
