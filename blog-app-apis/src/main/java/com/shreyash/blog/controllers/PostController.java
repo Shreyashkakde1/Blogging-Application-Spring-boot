@@ -1,13 +1,8 @@
 package com.shreyash.blog.controllers;
 
-import com.shreyash.blog.entities.Category;
 import com.shreyash.blog.entities.Post;
-import com.shreyash.blog.entities.User;
-import com.shreyash.blog.exceptions.ResourceNotFoundException;
 import com.shreyash.blog.payloads.ApiResponse;
 import com.shreyash.blog.payloads.PostDto;
-import com.shreyash.blog.repositories.CategoryRepository;
-import com.shreyash.blog.repositories.UserRepository;
 import com.shreyash.blog.services.PostService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +46,11 @@ public class PostController {
 
     // Get All Post
     @GetMapping("/getAllPost")
-    public ResponseEntity<List<PostDto>> getAllPost(){
-        List<PostDto> allPosts = this.postService.getAllPosts();
+    public ResponseEntity<List<PostDto>> getAllPost(
+            @RequestParam(value = "pageNumber",defaultValue = "1",required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize",defaultValue = "5", required = false) Integer pageSize
+    ){
+        List<PostDto> allPosts = this.postService.getAllPosts(pageNumber,pageSize);
         return new ResponseEntity<>(allPosts,HttpStatus.OK);
 
     }
@@ -77,8 +75,6 @@ public class PostController {
         this.postService.deletePost(postId);
         return new ResponseEntity<>(new ApiResponse("Deleted Successfully",true),HttpStatus.OK);
     }
-
-
 
 
 }

@@ -12,6 +12,9 @@ import com.shreyash.blog.services.PostService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -48,6 +51,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostDto updatePost(PostDto postDto, Long postId) {
+
         Post post = this.postRepository.findById(postId)
                 .orElseThrow(() -> new ResourceNotFoundException("Post", "Post Id", postId));
 
@@ -70,9 +74,16 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<PostDto> getAllPosts() {
-        List<Post> all = postRepository.findAll();
-        List<PostDto> collect = all.stream()
+    public List<PostDto> getAllPosts(Integer pageNumber,Integer pageSize) {
+
+
+        Pageable pageable  = PageRequest.of(pageNumber,pageSize);
+        Page<Post> pagePost = postRepository.findAll(pageable);
+
+        List<Post> content = pagePost.getContent();
+
+
+        List<PostDto> collect = content.stream()
                 .map(post -> modelMapper.map(post, PostDto.class))
                 .collect(Collectors.toList());
         return collect;
