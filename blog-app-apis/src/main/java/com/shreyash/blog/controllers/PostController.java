@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class PostController {
@@ -82,5 +84,13 @@ public class PostController {
         return new ResponseEntity<>(new ApiResponse("Deleted Successfully",true),HttpStatus.OK);
     }
 
+    // Search
+    @GetMapping("/posts/search/{keywords}")
+    public ResponseEntity<List<PostDto>> searchPostByTitle(
+            @PathVariable("keywords") String keywords
+    ){
+        List<PostDto> postDtos = this.postService.searchPosts(keywords);
+        return new ResponseEntity<>(postDtos,HttpStatus.OK);
+    }
 
 }
