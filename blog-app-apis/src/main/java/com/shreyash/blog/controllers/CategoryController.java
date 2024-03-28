@@ -3,7 +3,7 @@ package com.shreyash.blog.controllers;
 import com.shreyash.blog.payloads.ApiResponse;
 import com.shreyash.blog.payloads.CategoryDto;
 import com.shreyash.blog.services.CategoryService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

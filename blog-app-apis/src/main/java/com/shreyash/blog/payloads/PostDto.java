@@ -3,8 +3,8 @@ package com.shreyash.blog.payloads;
 import com.shreyash.blog.entities.Category;
 import com.shreyash.blog.entities.Comment;
 import com.shreyash.blog.entities.User;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Data;
 
 import java.util.Date;

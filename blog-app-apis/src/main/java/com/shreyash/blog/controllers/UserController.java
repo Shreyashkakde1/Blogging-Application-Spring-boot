@@ -3,7 +3,7 @@ package com.shreyash.blog.controllers;
 import com.shreyash.blog.payloads.ApiResponse;
 import com.shreyash.blog.payloads.UserDto;
 import com.shreyash.blog.services.UserService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

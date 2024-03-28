@@ -1,0 +1,89 @@
+commit 12fc019ba0689ce8e46ee56bfd47aabe4cd8bd91
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Tue Jan 30 14:26:49 2024 +0530
+
+    Added sorting in Get all Post API
+
+commit d14703983f476f30627c7ca98a1d8fb64162743d
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Tue Jan 30 14:04:10 2024 +0530
+
+    Added Pagination in Get all by user and get all by Category
+
+commit 39a03fc281254c6b6f0646e7e11df9f5d5d19dfc
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Tue Jan 30 12:54:14 2024 +0530
+
+    Modifying Post Response in POST API for sending data content,pageNumber,pageSize,totalElements,totalPages,lastPage
+
+commit 7754e7186eea1d483d0f38402e3cfb35e8e2273f
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Tue Jan 30 12:32:56 2024 +0530
+
+    Added Pagination in Get all Post Api
+
+commit 98a04b09837bc75d93fe5671c328152f29a35eb3
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Tue Jan 30 11:59:55 2024 +0530
+
+    Get All Posts and Get Single Post By ID API Done
+
+commit 7d9c16c5b3b304ea041be9042cefd259e4ee34fd
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Fri Jan 26 12:48:21 2024 +0530
+
+    Added Relationship mapping on Entities
+
+commit e4764906fcea58425ca234a3973fcac6634e4e8e
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Fri Jan 26 12:19:12 2024 +0530
+
+    Added Validations in Category and in CategoryDto
+
+commit a38bd364dee3778515e7c40fcbd0378d0450dc55
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Thu Jan 25 20:07:04 2024 +0530
+
+    renamed from CatagoryServiceImpl to CategoryServiceImpl.java
+
+commit 820208152c889e410639a2dc104a6b91d954b38c
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Thu Jan 25 19:59:31 2024 +0530
+
+    Created Category CRUD API's and added implementation to all end nodes
+
+commit ed9608f67fd5845c1fd35bc3fd49f4e987363c1f
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Fri Jan 19 17:42:20 2024 +0530
+
+    User Enitity Validations added in DTO layer
+
+commit 7166a69ff62a7dec1ff820b51a9acc58d3b82030
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Fri Jan 19 16:47:57 2024 +0530
+
+    added modelMapper
+
+commit f0105b0d0fe2d736061fbdc3714110e54f166e8e
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Fri Jan 19 15:08:04 2024 +0530
+
+    User CRUD Operatios with exception handling done
+
+commit 0ff230456e18232cf5164018318c42a4437f92b9
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Thu Jan 18 16:03:37 2024 +0530
+
+    create user service implementation done
+
+commit 20630631c21303d1d1837c06d5b476d621f94d6d
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Thu Jan 18 15:26:17 2024 +0530
+
+    basic applications.properties file config done
+
+commit 886e827a4e19dc3838451a3b6dcc6a37323192ac
+Author: shreyash <shreyashkakde20@gmail.com>
+Date:   Thu Jan 18 15:12:05 2024 +0530
+
+    starting the prject
